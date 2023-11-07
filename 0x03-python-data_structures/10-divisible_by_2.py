@@ -2,10 +2,7 @@
 
 def divisible_by_2(my_list=[]):
     divisible = []
-    for n in range(len(my_list)):
-        if my_list[n] % 2 == 0:
-            divisible.append(True)
-        else:
-            divisible.append(False)
+    for n in my_list:
+        divisible.append(True if n % 2 == 0 else False)
 
-        return divisible
+    return divisible
