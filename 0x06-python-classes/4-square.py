@@ -28,12 +28,13 @@ class Square:
                 Size
 
         """
+
         return (self.__size)
 
     @size.setter
     def size(self, value):
-         """Set size of square
-
+        """Set size of square
+            
             Args:
                 value (int): size of square
 
@@ -41,10 +42,10 @@ class Square:
                 Size
 
             Raises:
-                TypeError: size must be an integer
-                ValueError: size must be >= 0
-
+                TypeError: size must be an integer.
+                ValueError: size must be >= 0.
         """
+        
         if type(value) is not int:
             raise TypeError("size must be an integer")
         elif value < 0:
