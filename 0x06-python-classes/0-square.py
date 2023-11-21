@@ -6,7 +6,7 @@
 
 """
 
-class square:
+class Square:
     """Class square
 
     An empty class.
