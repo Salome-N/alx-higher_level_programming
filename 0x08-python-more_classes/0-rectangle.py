@@ -1,9 +1,9 @@
-    #!/usr/bin/python3
+#!/usr/bin/python3
 
-    """ Rectangle class module """
+""" Rectangle class module """
 
-    class Rectangle:
+class Rectangle:
 
-        """ Rectangle class """
+    """ Rectangle class """
 
-        pass
+    pass
