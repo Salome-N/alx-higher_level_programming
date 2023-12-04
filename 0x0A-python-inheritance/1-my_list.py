@@ -2,6 +2,7 @@
 
 """Define class Mylist with inherited list."""
 
+
 class Mylist(list):
     """Custom list class."""
     def print_sorted(self):
