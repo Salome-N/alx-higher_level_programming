@@ -4,7 +4,7 @@
 
 def write_file(filename="", text=""):
     """writes a string to a text file
-    
+ 
     Args:
         filename (str): name of the file to write
         text (str): text to write to the file
