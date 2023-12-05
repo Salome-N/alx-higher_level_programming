@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines JSON to string function"""
+"""Defines JSON string to object function"""
 
 import json
 
