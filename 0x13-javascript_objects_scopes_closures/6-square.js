@@ -1,7 +1,7 @@
 #!/usr/bin/node
 
 module.exports = class Square extends require('./5-square.js') {
-  charprint (c) {
+  charPrint (c) {
     if (c === undefined) {
       this.print();
     } else {
