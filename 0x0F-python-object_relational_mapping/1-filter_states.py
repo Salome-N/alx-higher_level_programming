@@ -13,5 +13,5 @@ if __name__ == "__main__":
     port = 3306
     db = MySQLdb.connect(host, user, passwd, database, port)
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM `states` ORDER BY `id`")
+    cursor.execute("SELECT * FROM states ORDER BY states.id ASC")
     [print(state) for state in cursor.fetchall() if state[1][0] == "N"]
