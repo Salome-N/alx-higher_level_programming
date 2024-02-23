@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-# lists all the states from database hbtn_0e_0_usa
-
+""" lists all the states from database hbtn_0e_0_usa """
 import MySQLdb
 import sys
+
 
 if __name__ == "__main__":
     user = sys.argv[1]
