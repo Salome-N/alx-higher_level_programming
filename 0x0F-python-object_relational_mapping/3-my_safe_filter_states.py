@@ -17,5 +17,5 @@ if __name__ == "__main__":
     cursor.execute("SELECT * FROM states")
     states = cursor.fetchall()
     for state in states:
-        if state[1] == sys.argv[4]]:
+        if state[1] == sys.argv[4]:
             print(state)
