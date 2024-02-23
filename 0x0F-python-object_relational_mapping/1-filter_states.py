@@ -14,4 +14,7 @@ if __name__ == "__main__":
     db = MySQLdb.connect(host, user, passwd, database, port)
     cursor = db.cursor()
     cursor.execute("SELECT * FROM states ORDER BY states.id ASC")
-    [print(state) for state in cursor.fetchall() if state[1][0] == "N"]
+    states = cursor.fetchall()
+    for state in states:
+        if state[1][0] == "N":
+            print(state)
