@@ -12,11 +12,12 @@ if __name__ == "__main__":
              sys.argv[1], sys.argv[2], sys.argv[3])
     engine = create_engine(uri_db, pool_pre_ping=True)
     Base.metadata.create_all(engine)
-    Session = Session(bind=engine)
+    session = Session(bind=engine)
     query = session.query(State).filter(
-            State.name.like("%{}%".format(argv[4]))).first()
+            State.name.like("%{}%".format(sys.argv[4]))).first()
     if query is None:
         print("Not found")
     else:
         print(query.id)
+    session.commit()
     session.close()
