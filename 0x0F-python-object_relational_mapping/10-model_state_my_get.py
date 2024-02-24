@@ -12,9 +12,10 @@ if __name__ == "__main__":
              sys.argv[1], sys.argv[2], sys.argv[3])
     engine = create_engine(uri_db, pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
+    session = Session()
     states = session.query(State).filter(
-            State.name.like("%{}%".format(argv[4]))).first()
-    if states id None:
+            State.name.like("%{}%".format(sys.argv[4]))).first()
+    if states is None:
         print("Not found")
     else:
         print(states.id)
