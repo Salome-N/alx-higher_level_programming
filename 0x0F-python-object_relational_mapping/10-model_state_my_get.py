@@ -4,20 +4,19 @@
 import sys
 from model_state import State
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import Session
 
 
 if __name__ == "__main__":
     uri_db = "mysql+mysqldb://{}:{}@localhost:3306/{}".format(
              sys.argv[1], sys.argv[2], sys.argv[3])
     engine = create_engine(uri_db, pool_pre_ping=True)
-    Session = sessionmaker(bind=engine)
-    session = Session()
-    session.commit()
+    Session = Session(bind=engine)
     states = session.query(State).filter(
             State.name.like("%{}%".format(sys.argv[4]))).first()
     if states is None:
         print("Not found")
     else:
         print(states.id)
+    session.commit()
     session.close()
