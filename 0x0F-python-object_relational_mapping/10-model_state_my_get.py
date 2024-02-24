@@ -12,11 +12,12 @@ if __name__ == "__main__":
              sys.argv[1], sys.argv[2], sys.argv[3])
     engine = create_engine(uri_db, pool_pre_ping=True)
     Session = Session(bind=engine)
-    states = session.query(State).filter(
-            State.name.like("%{}%".format(sys.argv[4]))).first()
-    if states is None:
+    found = False
+    for state in session.query(State):
+        if state.name == sys.argv[4]:
+            print("{}".format(state.id))
+            found = True
+            break
+    if found is False:
         print("Not found")
-    else:
-        print(states.id)
-    session.commit()
     session.close()
