@@ -6,7 +6,12 @@ import sys
 
 
 if __name__ == "__main__":
-    db = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
+    user = sys.argv[1]
+    passwd = sys.argv[2]
+    database = sys.argv[3]
+    host = 'localhost'
+    port = 3306
+    db = MySQLdb.connect(host, user, passwd, database, port)
     cursor = db.cursor()
     cursor.execute("SELECT c.id, c.name, s.name \
             FROM cities as c \
@@ -14,6 +19,4 @@ if __name__ == "__main__":
             ON c.state_id = s.id \
             ORDER BY c.id")
     cities = cursor.fetchall()
-    for city in cities:
-        if city[2] == sys.argv[4]:
-            print(", ".join([city[1]))
+    print(", ".join([city[1]for city in cities if city[2] == sys.argv[4]]))
