@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 ''' displays the body of the response '''
 from sys import argv
-import urllib.error import HTTPError
+from urllib.error import HTTPError
 import urllib.request
 
 
