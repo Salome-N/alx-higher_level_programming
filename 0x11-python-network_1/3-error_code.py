@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 ''' displays the body of the response '''
-import sys import argv
+from sys import argv
 import urllib.error import HTTPError
 import urllib.request
 
