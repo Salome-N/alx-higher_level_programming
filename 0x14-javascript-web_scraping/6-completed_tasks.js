@@ -5,17 +5,17 @@ request(process.argv[2], function (err, res, body) {
   if (err) {
     console.log(err);
   } else {
-      todos = JSON.parse(body);
-      const doneTasks = {};
-      for (let i = 0; i < todos.length; ++i) {
-	const userId = todos[i].userId;
-	const completed = todos[i].completed;
+    body = JSON.parse(body);
+    const doneTasks = {};
+    for (let i = 0; i < body.length; ++i) {
+      const userId = body[i].userId;
+      const completed = body[i].completed;
 
-	if (completed && !doneTasks[userId]) {
-           doneTasks[userId] = 0;
-	}
-	if (completed) ++doneTasks[userId];
+      if (completed && !doneTasks[userId]) {
+        doneTasks[userId] = 0;
       }
-      console.log(doneTasks);
+      if (completed) ++doneTasks[userId];
+    }
+    console.log(doneTasks);
   }
 });
